@@ -2,14 +2,10 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
-#define SLEEP_TIME_MS 1000
-#define GPIO_PIN 4
+#define SLEEP_TIME_MS CONFIG_APP_HEARTBEAT_PERIOD_MS
+#define LED_NODE DT_ALIAS(led0)
 
-static const struct gpio_dt_spec led = {
-    .port = DEVICE_DT_GET(DT_NODELABEL(gpio0)),
-    .pin = GPIO_PIN,
-    .dt_flags = GPIO_ACTIVE_HIGH,
-};
+static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
