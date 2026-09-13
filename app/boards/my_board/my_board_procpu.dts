@@ -9,11 +9,11 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <zephyr/dt-bindings/input/esp32-touch-sensor-input.h>
 #include <espressif/partitions_0x0_amp.dtsi>
-#include "our_board_pinctrl.dtsi"
+#include "my_board_pinctrl.dtsi"
 
 / {
-	model = "Espressif ESP32S3-DevkitC PROCPU";
-	compatible = "espressif,esp32s3";
+	model = "My Board";
+	compatible = "meindustries,my_board";
 
 	aliases {
 		i2c-0 = &i2c0;
