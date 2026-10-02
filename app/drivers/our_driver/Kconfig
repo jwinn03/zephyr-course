@@ -1,0 +1,3 @@
+menuconfig OUR_DRIVER
+    bool "Our Driver"
+    default y

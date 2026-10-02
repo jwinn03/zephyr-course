@@ -1,0 +1,8 @@
+description: Our custom LED driver binding
+compatible: "our,driver"
+include: sensor-device.yaml
+
+properties:
+  led-gpios:
+    type: phandle-array
+    required: true

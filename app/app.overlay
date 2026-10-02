@@ -1,7 +1,11 @@
 / {
+    our_driver0: our_driver {
+        compatible = "our,driver";
+        status = "okay";
+    };
+
     leds {
         compatible = "gpio-leds";
-
         pin_4_led: led_name {
             gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
             label = "Pin 4 LED";
@@ -11,4 +15,5 @@
     aliases {
         led0 = &pin_4_led;
     };
+    
 };
