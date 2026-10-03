@@ -1,6 +1,7 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/logging/log.h>
+#include "our_driver.h"
 
 #define DT_DRV_COMPAT our_driver
 
@@ -12,6 +13,7 @@ struct our_driver_config {
 
 struct our_driver_data {
     bool led_on;
+    uint32_t toggle_count;
 };
 
 static int sample_fetch_my_impl(const struct device *dev, enum sensor_channel chan) {
@@ -42,6 +44,15 @@ static int channel_get_my_impl(const struct device *dev,
     val->val1 = data->led_on ? 1 : 0;
     val->val2 = 0;
     data->led_on = false;
+    return 0;
+}
+
+int our_driver_increment_counter(const struct device *dev, int amount) {
+    struct our_driver_data *data = dev->data;
+
+    data->toggle_count += amount;
+    LOG_INF("Toggle count now %u", data->toggle_count);
+
     return 0;
 }
 

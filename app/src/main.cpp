@@ -2,6 +2,8 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/drivers/sensor.h>
+#include "../drivers/our_driver/our_driver.h"
+
 
 #define SLEEP_TIME_MS CONFIG_APP_HEARTBEAT_PERIOD_MS
 
@@ -24,11 +26,13 @@ int main(void)
 
     while (1) {
         sensor_sample_fetch(led_sensor);
+        our_driver_increment_counter(led_sensor, 1);
         LOG_INF("LED state: ON");
         k_msleep(SLEEP_TIME_MS);
 
         struct sensor_value val;
         sensor_channel_get(led_sensor, SENSOR_CHAN_AMBIENT_TEMP, &val);
+        our_driver_increment_counter(led_sensor, 1);
         LOG_INF("LED state: OFF");
         k_msleep(SLEEP_TIME_MS);
     }
