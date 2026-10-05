@@ -1,7 +1,10 @@
 #include <zephyr/shell/shell.h>
 #include <zephyr/drivers/sensor.h>
+#include "our_driver.h"
 
 static const struct device *const led_sensor = DEVICE_DT_GET(DT_NODELABEL(our_driver0));
+
+static const int INCREMENT_MIN = 1, INCREMENT_MAX = 1000;
 
 static int cmd_sensor_fetch(const struct shell *sh, size_t argc, char **argv)
 {
@@ -55,10 +58,47 @@ static int cmd_sensor_info(const struct shell *sh, size_t argc, char **argv)
     return 0;
 }
 
+static int cmd_sensor_increment(const struct shell *sh, size_t argc, char **argv)
+{
+    if (argc < 2) {
+        shell_error(sh, "Missing argument: <amount> (%d...%d)", INCREMENT_MIN, INCREMENT_MAX);
+        return -EINVAL;
+    }
+
+    int err = 0;
+    long amount = shell_strtol(argv[1], 10, &err);
+    if (err != 0) {
+        shell_error(sh, "Invalid number: '%s'", argv[1]);
+        return -EINVAL;
+    }
+
+    if (amount < INCREMENT_MIN || amount > INCREMENT_MAX) {
+        shell_error(sh, "Out of range: %ld (allowed %d...%d)", amount, INCREMENT_MIN, INCREMENT_MAX);
+        return -ERANGE;
+    }
+
+    if (!device_is_ready(led_sensor)) {
+        shell_error(sh, "Device %s not ready", led_sensor->name);
+        return -ENODEV;
+    }
+
+    int ret = our_driver_increment_counter(led_sensor, (int)amount);
+    if (ret < 0) {
+        shell_error(sh, "our_driver_increment_counter failed: %d", ret);
+        return ret;
+    }
+
+    shell_print(sh, "Counter incremented by %ld", amount);
+    return 0;
+}
+
 SHELL_STATIC_SUBCMD_SET_CREATE(our_driver_subcmd,
     SHELL_CMD(fetch, NULL, "Fetch a sample (sensor_sample_fetch).", cmd_sensor_fetch),
     SHELL_CMD(read,  NULL, "Read channel (sensor_channel_get).",    cmd_sensor_read),
     SHELL_CMD(info,  NULL, "Print device name and ready state.",    cmd_sensor_info),
+    SHELL_CMD_ARG(increment, NULL,
+                  "Increment toggle counter.\nUsage: sensor increment <1..1000>",
+                   cmd_sensor_increment, 1, 1),
     SHELL_SUBCMD_SET_END
 );
 
