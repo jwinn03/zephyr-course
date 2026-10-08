@@ -1,0 +1,21 @@
+2026-10-07 22:21:01,800 - twister - INFO - Using Ninja..
+2026-10-07 22:21:01,832 - twister - INFO - Zephyr version: v4.2.0
+2026-10-07 22:21:01,833 - twister - DEBUG - Running cmake script /home/shohem/Documents/dev/deps/zephyr/cmake/verify-toolchain.cmake
+2026-10-07 22:21:01,833 - twister - DEBUG - Calling cmake: /usr/bin/cmake -DFORMAT=json -P /home/shohem/Documents/dev/deps/zephyr/cmake/verify-toolchain.cmake
+2026-10-07 22:21:01,965 - twister - DEBUG - Finished running /home/shohem/Documents/dev/deps/zephyr/cmake/verify-toolchain.cmake
+2026-10-07 22:21:01,965 - twister - INFO - Using 'zephyr' toolchain.
+2026-10-07 22:21:02,681 - twister - DEBUG - Reading testsuite configuration files under /home/shohem/Documents/dev/zephyr-course/tests/ring_buf...
+2026-10-07 22:21:02,681 - twister - DEBUG - Found possible testsuite in /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+2026-10-07 22:21:02,683 - twister - DEBUG - No duplicates found.
+2026-10-07 22:21:02,683 - twister - DEBUG - platform filter: ['native_sim']
+2026-10-07 22:21:02,683 - twister - DEBUG -   vendor filter: []
+2026-10-07 22:21:02,683 - twister - DEBUG -     arch_filter: None
+2026-10-07 22:21:02,683 - twister - DEBUG -      tag_filter: None
+2026-10-07 22:21:02,683 - twister - DEBUG -     exclude_tag: None
+2026-10-07 22:21:02,683 - twister - DEBUG - Checking platform filter: ['native_sim']
+2026-10-07 22:21:02,683 - twister - INFO - Building initial testsuite list...
+2026-10-07 22:21:02,683 - twister - INFO - Writing JSON report /home/shohem/Documents/dev/zephyr-course/twister-out/testplan.json
+2026-10-07 22:21:02,773 - twister - INFO - JOBS: 12
+2026-10-07 22:21:02,773 - twister - INFO - Adding tasks to the queue...
+2026-10-07 22:21:02,773 - twister - DEBUG - adding native_sim/native/host/homework.unit.ring_buf
+2026-10-07 22:21:02,838 - twister - INFO - Added initial list of jobs to queue

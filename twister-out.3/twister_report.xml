@@ -1,0 +1,591 @@
+<testsuites>
+	<testsuite name="native_sim/native" timestamp="2026-10-07T22:21:28.070230" time="0.0" tests="8" failures="8" errors="0" skipped="0">
+		<properties>
+			<property name="version" value="v4.2.0" />
+		</properties>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_push_pop.fifo_order" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_boundaries.pop_null_returns_einval" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_init.fresh_state" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_push_pop.single_push_pop" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_init.reinit_clears_state" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_boundaries.is_full_after_fill" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_boundaries.peek_does_not_consume" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_push_pop.push_full_returns_enospc" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: /home/shohem/Documents/dev/zephyr-course/tests/ring_buf
+-- CMake version: 4.3.0
+-- Found Python3: /home/shohem/zephyrproject/.venv/bin/python (found suitable version "3.14.7", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /home/shohem/.cache/zephyr
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: native_sim, qualifiers: native
+-- Found toolchain: host (gcc/ld)
+-- Found Dtc: /usr/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts
+-- Generated zephyr.dts: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /home/shohem/Documents/dev/zephyr-course/tests/ring_buf/Kconfig
+Loaded configuration '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+Merged configuration '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /usr/bin/ld.bfd (found version "2.46.1")
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/lib64/ccache/gcc
+CMake Warning at /home/shohem/Documents/dev/deps/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: /home/shohem/Documents/dev/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (4.5s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf
+ninja: warning: Ignoring jobserver: Pipe-based protocol is not supported! [ -j12 --jobserver-auth=8,9]
+[1/104] Preparing syscall dependency handling
+
+[2/104] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/home/shohem/Documents/dev/deps/zephyr), build: v4.2.0
+[3/104] Generating misc/generated/syscalls_subdirs.trigger
+[4/104] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/104] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[6/104] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[7/104] Generating include/generated/zephyr/driver-validation.h
+[8/104] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/104] Building C object zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj
+FAILED: [code=1] zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj 
+ccache /usr/lib64/ccache/gcc -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DTC_RUNID=3a39bac2accfae5005cee7e1ab5936b9 -D__ZEPHYR__=1 -I/home/shohem/Documents/dev/deps/zephyr/kernel/include -I/home/shohem/Documents/dev/deps/zephyr/arch/posix/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr -I/home/shohem/Documents/dev/deps/zephyr/include -I/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated -I/home/shohem/Documents/dev/deps/zephyr/soc/native/inf_clock -I/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/common/src/include -I/home/shohem/Documents/dev/deps/zephyr/scripts/native_simulator/native/src/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/include -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/coverage -I/home/shohem/Documents/dev/deps/zephyr/subsys/testsuite/ztest/include -fno-strict-aliasing -Werror -Os -imacros /home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=/home/shohem/Documents/dev/zephyr-course/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=/home/shohem/Documents/dev/deps/zephyr=ZEPHYR_BASE -fmacro-prefix-map=/home/shohem/Documents/dev=WEST_TOPDIR -ffunction-sections -fdata-sections -m32 -msse2 -mfpmath=sse -fvisibility=hidden -fno-freestanding -std=c11 -fno-lto -MD -MT zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -MF zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj.d -o zephyr/CMakeFiles/offsets.dir/arch/posix/core/offsets/offsets.c.obj -c /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c
+In file included from /usr/include/features.h:564,
+                 from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/types.h:11,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel_includes.h:21,
+                 from /home/shohem/Documents/dev/deps/zephyr/include/zephyr/kernel.h:17,
+                 from /home/shohem/Documents/dev/deps/zephyr/arch/posix/core/offsets/offsets.c:26:
+/usr/include/gnu/stubs.h:7:11: fatal error: gnu/stubs-32.h: No such file or directory
+    7 | # include &lt;gnu/stubs-32.h&gt;
+      |           ^~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,44 @@
+cmake:
+  application:
+    configuration-dir: '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf'
+    source-dir: '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf'
+  board:
+    name: 'native_sim'
+    path:
+     - '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim'
+    qualifiers: 'native'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/bindings'
+    files:
+     - '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim.dts'
+    include-dirs:
+     - '/home/shohem/Documents/dev/deps/zephyr/include'
+     - '/home/shohem/Documents/dev/deps/zephyr/include/zephyr'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/common'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/vendor'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/rx'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/x86'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/xtensa'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/sparc'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/riscv'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/posix'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/arm64'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/arm'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts/arc'
+     - '/home/shohem/Documents/dev/deps/zephyr/dts'
+  kconfig:
+    files:
+     - '/home/shohem/Documents/dev/deps/zephyr/boards/native/native_sim/native_sim_defconfig'
+     - '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+     - '/home/shohem/Documents/dev/zephyr-course/twister-out/native_sim_native/host/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/home/shohem/Documents/dev/zephyr-course/tests/ring_buf/prj.conf'
+  toolchain:
+    name: 'host'
+    path: ''
+  zephyr:
+    version: '4.2.0'
+    zephyr-base: '/home/shohem/Documents/dev/deps/zephyr'
+version: '0.1.0'
