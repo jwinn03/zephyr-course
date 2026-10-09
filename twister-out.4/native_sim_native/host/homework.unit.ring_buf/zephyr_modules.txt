@@ -1,0 +1,2 @@
+"cmsis_6":"/home/shohem/Documents/dev/deps/modules/hal/cmsis_6":"${ZEPHYR_CMSIS_6_CMAKE_DIR}"
+"hal_espressif":"/home/shohem/Documents/dev/deps/modules/hal/espressif":"/home/shohem/Documents/dev/deps/modules/hal/espressif/zephyr"
